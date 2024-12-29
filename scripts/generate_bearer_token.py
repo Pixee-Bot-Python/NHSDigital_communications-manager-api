@@ -31,8 +31,8 @@ resp = requests.post(f"https://{env}.api.service.nhs.uk/oauth2/token", headers={
     "grant_type": "client_credentials",
     "client_assertion_type": "urn:ietf:params:oauth:client-assertion-type:jwt-bearer",
     "client_assertion": j
-  }
-)
+  }, 
+timeout=60)
 
 details = json.loads(resp.content)
 
